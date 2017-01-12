@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>FIXME</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div id="main"></div>
+    <script src="index.js"></script>
+    <script>
+var node = document.getElementById('main');
+var app = Elm.Main.embed(node);
+app.ports.sendAlert.subscribe(function(message){
+  alert(message);
+});
+window.app = app;
+    </script>
+  </body>
+</html>
