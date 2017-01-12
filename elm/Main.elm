@@ -22,8 +22,4 @@ main = Navigation.program
 
 
 subscriptions : App -> Sub App.Msg
-subscriptions _ = Sub.batch []
---   Sub.batch
---     [ updateTrackList (TrackList << UpdateTrackList)
---     , clearTrackList (always (TrackList ClearTrackList))
---     ]
+subscriptions _ = Sub.none
