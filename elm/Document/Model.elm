@@ -7,13 +7,16 @@ type ServerState
   | Error String
 
 
-type alias Document = { body : String
-                      , serverState : ServerState }
+type alias Document =
+  { body : String
+  , serverState : ServerState }
 
 
 empty : Document
-empty = Document "empty" Idle
+empty =
+  Document "empty" Idle
 
 
 initial : Document
-initial = empty
+initial =
+  empty

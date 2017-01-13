@@ -23,7 +23,7 @@ view state =
 
 
 stateChangeSection : App -> Html AM.Msg
-stateChangeSection state = 
+stateChangeSection state =
   let
     btn = \m s -> input [type_ "button", onClick (AM.NavigateState m), value s] []
   in

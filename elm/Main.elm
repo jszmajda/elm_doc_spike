@@ -10,14 +10,15 @@ import Navigation
 
 
 main : Program Never App.Model.App App.Msg
-main = Navigation.program
-        locationUpdate
-        { init = Routing.App.init
-        , update = App.Update.update
-        , view = App.View.view
-        , subscriptions = subscriptions
-        }
+main =
+  Navigation.program
+    locationUpdate
+    { init = Routing.App.init
+    , update = App.Update.update
+    , view = App.View.view
+    , subscriptions = subscriptions }
 
 
 subscriptions : App -> Sub App.Msg
-subscriptions _ = Sub.none
+subscriptions _ =
+  Sub.none
