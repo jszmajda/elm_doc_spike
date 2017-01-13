@@ -8,9 +8,6 @@ import Routing.App exposing (locationUpdate, init)
 import Ports.Ports exposing (sendAlert)
 import Navigation
 
--- other Component.Msg imports as needed?
--- import component ports as needed to support subscriptions
-
 main : Program Never App.Model.App App.Msg
 main = Navigation.program
         locationUpdate
