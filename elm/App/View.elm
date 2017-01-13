@@ -8,7 +8,9 @@ import Document.View exposing (view)
 import Html exposing (Html, div, input)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+
 import Navigation
+
 
 view : App -> Html AM.Msg
 view state =
@@ -18,6 +20,7 @@ view state =
       ViewDocument -> Html.map (\dm -> Document dm) (Document.View.view state.document)
   in
     div [] ([ stateView ] ++ [ (stateChangeSection state) ])
+
 
 stateChangeSection : App -> Html AM.Msg
 stateChangeSection state = 

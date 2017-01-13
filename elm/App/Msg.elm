@@ -4,6 +4,7 @@ import Document.Msg
 import DocList.Msg
 import App.ViewState exposing (ViewState(..))
 
+
 type Msg
   = NoOp
   | NavigateState ViewState

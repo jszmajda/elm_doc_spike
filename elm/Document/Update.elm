@@ -8,18 +8,24 @@ import Http
 import Json.Encode exposing (object)
 import Json.Decode exposing (list, string, field)
 
+
 update : Msg -> Document -> (Document, Cmd Msg)
 update msg doc =
   case Debug.log "msg" msg of
-    Document.Msg.ReplaceBody string ->
+
+    ReplaceBody string ->
       ( {doc | body = string }, Cmd.none )
-    Document.Msg.Commit ->
+
+    Commit ->
       --( doc, sendAlert <| "Commit: " ++ doc.body )
       ( {doc | serverState = Requesting}, transmit doc )
-    Document.Msg.ServerResponse (Ok result) ->
+
+    ServerResponse (Ok result) ->
       ( {doc | serverState = Idle}, sendAlert result )
-    Document.Msg.ServerResponse (Err error) ->
+
+    ServerResponse (Err error) ->
       ( {doc | serverState = Error (toString error)}, sendAlert ("Error! " ++ toString error) )
+
 
 transmit : Document -> Cmd Msg
 transmit doc =

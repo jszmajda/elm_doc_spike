@@ -8,6 +8,7 @@ import Routing.App exposing (locationUpdate, init)
 import Ports.Ports exposing (sendAlert)
 import Navigation
 
+
 main : Program Never App.Model.App App.Msg
 main = Navigation.program
         locationUpdate

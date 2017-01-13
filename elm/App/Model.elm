@@ -6,18 +6,17 @@ import Document.Model
 import DocList.Model
 
 
-type alias App = 
-  { viewState : ViewState
-  , document : Document.Model.Document
-  , docList  : DocList.Model.DocList
-  }
+type alias App = { viewState : ViewState
+                 , document : Document.Model.Document
+                 , docList  : DocList.Model.DocList }
+
 
 -- constructor will need to construct empty versions of each of the component models that live in the application state
 empty : App
-empty = App
-          ViewDocList
-          Document.Model.empty
-          DocList.Model.empty
+empty = { viewState = ViewDocList
+        , document = Document.Model.empty
+        , docList = DocList.Model.empty }
+
 
 initial : ( App, Cmd Msg )
 initial = ( empty, Cmd.none )
