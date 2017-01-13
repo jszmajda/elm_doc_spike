@@ -8,6 +8,7 @@ import Document.View exposing (view)
 import Html exposing (Html, div, input)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Navigation
 
 view : App -> Html AM.Msg
 view state =
@@ -21,7 +22,7 @@ view state =
 stateChangeSection : App -> Html AM.Msg
 stateChangeSection state = 
   let
-    button = \m s -> input [type_ "button", onClick (AM.ViewState m), value s] []
+    button = \m s -> input [type_ "button", onClick (AM.NavigateState m), value s] []
   in
     div [ class "stateChange" ] 
       [ button ViewDocList "DocList"

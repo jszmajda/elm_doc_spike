@@ -8,6 +8,7 @@ import App.ViewState exposing (ViewState(..))
 
 type Msg
   = NoOp
+  | NavigateState App.ViewState.ViewState
   | ViewState App.ViewState.ViewState
   | Document Document.Msg.Msg
   | DocList DocList.Msg.Msg

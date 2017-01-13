@@ -6,7 +6,7 @@ import Ports.Ports exposing (sendAlert)
 
 update : Msg -> Document -> (Document, Cmd Msg)
 update msg doc =
-  case Debug.log "message" msg of
+  case msg of
     Document.Msg.ReplaceBody string ->
       ( Document string, Cmd.none )
     Document.Msg.Commit ->

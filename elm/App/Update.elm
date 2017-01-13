@@ -7,14 +7,17 @@ import App.Msg exposing (Msg(..))
 -- import Component.Update
 import Document.Update
 import DocList.Update
+import Navigation exposing (newUrl)
 
 update : Msg -> App -> (App, Cmd Msg)
 update action state =
-  case Debug.log "Message" action of
+  case action of
     NoOp ->
       (state, Cmd.none)
     ViewState msg ->
       ( { state | viewState = msg }, Cmd.none )
+    NavigateState msg ->
+      ( state, Navigation.newUrl ("#/" ++ (toString msg)) )
     Document msg ->
       let
         ( nextState, cmd ) = Document.Update.update msg state.document
