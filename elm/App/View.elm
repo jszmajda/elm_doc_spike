@@ -22,9 +22,9 @@ view state =
 stateChangeSection : App -> Html AM.Msg
 stateChangeSection state = 
   let
-    button = \m s -> input [type_ "button", onClick (AM.NavigateState m), value s] []
+    btn = \m s -> input [type_ "button", onClick (AM.NavigateState m), value s] []
   in
     div [ class "stateChange" ] 
-      [ button ViewDocList "DocList"
-      , button ViewDocument "Document"
+      [ btn ViewDocList "DocList"
+      , btn ViewDocument "Document"
       ]

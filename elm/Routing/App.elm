@@ -13,6 +13,10 @@ locationUpdate location =
     "ViewDocList" -> ViewState ViewDocList
     "ViewDocument" -> ViewState ViewDocument
     _    -> App.NoOp
+    -- Would rather code this as:
+    -- msg -> case Text.fromString msg of
+    --          Just value -> ViewState value
+    --          Nothing    -> App.NoOp
 
 -- currently discards initial nav state
 init : Navigation.Location -> ( Model.App, Cmd App.Msg )

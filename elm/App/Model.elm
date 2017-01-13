@@ -14,7 +14,10 @@ type alias App =
 
 -- constructor will need to construct empty versions of each of the component models that live in the application state
 empty : App
-empty = App ViewDocList Document.Model.empty DocList.Model.empty
+empty = App
+          ViewDocList
+          Document.Model.empty
+          DocList.Model.empty
 
 initial : ( App, Cmd Msg )
 initial = ( empty, Cmd.none )

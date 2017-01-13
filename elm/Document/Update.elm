@@ -19,7 +19,7 @@ update msg doc =
     Document.Msg.ServerResponse (Ok result) ->
       ( {doc | serverState = Idle}, sendAlert result )
     Document.Msg.ServerResponse (Err error) ->
-      ( {doc | serverState = Error (toString error)}, Cmd.none )
+      ( {doc | serverState = Error (toString error)}, sendAlert ("Error! " ++ toString error) )
 
 transmit : Document -> Cmd Msg
 transmit doc =
