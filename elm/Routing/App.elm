@@ -24,7 +24,10 @@ locationUpdate location =
     --          Nothing    -> App.NoOp
 
 
--- currently discards initial nav state
 init : Navigation.Location -> ( Model.App, Cmd App.Msg )
 init location =
-  (Model.empty, Cmd.none)
+  let
+    msg = locationUpdate location
+    ( model, cmd ) = App.Update.update msg Model.empty
+  in
+    ( model, cmd )
